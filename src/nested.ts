@@ -270,7 +270,35 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const modifiedQuestions = questions.map(
+        (question: Question): Question => ({
+            ...question,
+            options:
+                question.id === targetId
+                    ? addOption(targetOptionIndex, question.options, newOption)
+                    : question.options
+        })
+    );
+
+    return modifiedQuestions;
+}
+
+function addOption(
+    targetIndex: number,
+    options: string[],
+    newOption: string
+): string[] {
+    if (targetIndex === -1) {
+        const modifiedOptions = [...options];
+        modifiedOptions.splice(options.length, 0, newOption);
+
+        return modifiedOptions;
+    } else {
+        const modifiedOptions = [...options];
+        modifiedOptions.splice(targetIndex, 1, newOption);
+
+        return modifiedOptions;
+    }
 }
 
 /***
