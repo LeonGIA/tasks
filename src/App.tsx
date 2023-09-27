@@ -1,6 +1,12 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 import logo from "./logo.png";
 
@@ -12,39 +18,18 @@ function App(): JSX.Element {
                 <img src={logo} alt="Homepage logo" />
                 <h4>Maintained by: Leon Giang</h4>
             </header>
-
-            <div className="Body">
-                <Container>
-                    <Row>
-                        <Col>
-                            <ul>
-                                <p>Classes I have Taken Before</p>
-                                <li>CISC181</li>
-                                <li>CISC108</li>
-                                <li>CISC320</li>
-                            </ul>
-
-                            <div className="col1">
-                                <p>BOX 1</p>
-                            </div>
-                        </Col>
-
-                        <Col>
-                            <div className="Button">
-                                <Button
-                                    onClick={() => console.log("Hello World!")}
-                                >
-                                    Log Hello World
-                                </Button>
-                            </div>
-
-                            <div className="col2">
-                                <p>BOX 2</p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
