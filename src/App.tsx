@@ -18,6 +18,7 @@ function App(): JSX.Element {
                 <img src={logo} alt="Homepage logo" />
                 <h4>Maintained by: Leon Giang</h4>
             </header>
+
             <hr></hr>
             <Counter></Counter>
             <hr />
