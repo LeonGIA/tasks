@@ -31,6 +31,40 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            <hr />
+
+            <div className="Body">
+                <Container>
+                    <Row>
+                        <Col>
+                            <ul>
+                                <p>Classes I have Taken Before</p>
+                                <li>CISC181</li>
+                                <li>CISC108</li>
+                                <li>CISC320</li>
+                            </ul>
+
+                            <div className="col1">
+                                <p>BOX 1</p>
+                            </div>
+                        </Col>
+
+                        <Col>
+                            <div className="Button">
+                                <Button
+                                    onClick={() => console.log("Hello World!")}
+                                >
+                                    Log Hello World
+                                </Button>
+                            </div>
+
+                            <div className="col2">
+                                <p>BOX 2</p>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </div>
     );
 }
