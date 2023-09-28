@@ -31,15 +31,8 @@ export function TwoDice(): JSX.Element {
             <Button onClick={() => rollDice(1)}>Roll Left</Button>
             <Button onClick={() => rollDice(2)}>Roll Right</Button>
 
-            {dice1 === dice2 ? (
-                dice1 === 1 ? (
-                    <span>Lose</span>
-                ) : (
-                    <span>Win</span>
-                )
-            ) : (
-                ""
-            )}
+            {dice1 === dice2 && dice1 !== 1 ? "Win" : ""}
+            {dice1 === dice2 && dice1 === 1 ? "Lose" : ""}
         </div>
     );
 }
