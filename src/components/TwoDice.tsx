@@ -28,8 +28,8 @@ export function TwoDice(): JSX.Element {
         <div>
             <span data-testid="left-die">{dice1}</span>
             <span data-testid="right-die">{dice2}</span>
-            <button onClick={() => rollDice(1)}>Roll Left</button>
-            <button onClick={() => rollDice(2)}>Roll Right</button>
+            <Button onClick={() => rollDice(1)}>Roll Left</Button>
+            <Button onClick={() => rollDice(2)}>Roll Right</Button>
 
             {dice1 === dice2 ? (
                 dice1 === 1 ? (

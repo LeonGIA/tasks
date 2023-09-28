@@ -48,8 +48,8 @@ export function CycleHoliday(): JSX.Element {
     return (
         <div>
             <span>Holiday: {holidayEmojis[holiday]}</span>
-            <button onClick={changeHolidayAlphabet}>Advance by Alphabet</button>
-            <button onClick={changeHolidayYear}>Advance by Year</button>
+            <Button onClick={changeHolidayAlphabet}>Advance by Alphabet</Button>
+            <Button onClick={changeHolidayYear}>Advance by Year</Button>
         </div>
     );
 }
