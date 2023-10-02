@@ -43,6 +43,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            <hr />
 
             <div className="Body">
                 <Container>
