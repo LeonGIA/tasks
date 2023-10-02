@@ -40,6 +40,8 @@ export function StartAttempt(): JSX.Element {
             <button onClick={addQuizAttempts} disabled={quizInProgress}>
                 Mulligan
             </button>
+
+            <span>Number of Attempts: {quizAttempts}</span>
         </div>
     );
 }
