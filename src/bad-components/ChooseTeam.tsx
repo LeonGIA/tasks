@@ -15,7 +15,6 @@ export function ChooseTeam(): JSX.Element {
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
-        // DO NOT PUSH, DOES NOT UPDATE CORRECTLY
         if (!team.includes(newMember)) {
             const newTeam = [...team, newMember];
             setTeam(newTeam);
@@ -24,6 +23,7 @@ export function ChooseTeam(): JSX.Element {
 
     function clearTeam() {
         setTeam([]);
+        setAllOptions(PEOPLE);
     }
 
     return (
