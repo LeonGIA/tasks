@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 
 export function EditMode(): JSX.Element {
     const [canEdit, setEditMode] = useState<boolean>(false);
@@ -14,10 +14,49 @@ export function EditMode(): JSX.Element {
         setStudent(event.target.checked);
     }
 
+    function displayEdits(): JSX.Element {
+        if (canEdit)
+            return (
+                <div>
+                    <Form.Check
+                        type="checkbox"
+                        id="is-student-check"
+                        label="Student?"
+                        disabled={!canEdit}
+                        checked={isStudent}
+                        onChange={updateStudent}
+                    />
+                    <Form.Group controlId="formChangeUserName" as={Row}>
+                        <Form.Label column sm={2}>
+                            Enter a Username:
+                        </Form.Label>
+                        <Col>
+                            <Form.Control
+                                type="string"
+                                value={userName}
+                                disabled={!canEdit}
+                                onChange={(
+                                    event: React.ChangeEvent<HTMLInputElement>
+                                ) => setUserName(event.target.value)}
+                            />
+                        </Col>
+                    </Form.Group>
+                </div>
+            );
+        else
+            return (
+                <span>
+                    {!canEdit
+                        ? isStudent
+                            ? `${userName} is a student`
+                            : `${userName} is not a student`
+                        : ""}
+                </span>
+            );
+    }
     return (
         <div>
             <h3>Edit Mode</h3>
-
             <Form.Check
                 type="switch"
                 id="can-edit-switch"
@@ -26,34 +65,7 @@ export function EditMode(): JSX.Element {
                 onChange={updateEditMode}
             />
 
-            <Form.Check
-                type="checkbox"
-                id="is-student-check"
-                label="Student?"
-                disabled={!canEdit}
-                checked={isStudent}
-                onChange={updateStudent}
-            />
-
-            <Form.Group controlId="formChangeUserName">
-                <Form.Label>Enter a Username:</Form.Label>
-                <Form.Control
-                    type="string"
-                    value={userName}
-                    disabled={!canEdit}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setUserName(event.target.value)
-                    }
-                />
-            </Form.Group>
-
-            <span>
-                {!canEdit
-                    ? isStudent
-                        ? `${userName} is a student`
-                        : `${userName} is not a student`
-                    : ""}
-            </span>
+            {displayEdits()}
         </div>
     );
 }
