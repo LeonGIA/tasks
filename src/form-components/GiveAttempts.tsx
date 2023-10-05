@@ -1,4 +1,4 @@
-import React, { ReactText, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 export function GiveAttempts(): JSX.Element {
